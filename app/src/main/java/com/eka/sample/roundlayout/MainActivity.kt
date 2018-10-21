@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
                         SeekBarItem.RADIUS -> {
                             it.binding.seekBar.onProgressChange { _, p, _ ->
                                 roundLayout.setRadius(p.toFloat(), p.toFloat(), p.toFloat(), p.toFloat())
+                                it.binding.value.text = p.toString()
                             }
                         }
                         SeekBarItem.TOP_LEFT_RADIUS -> {

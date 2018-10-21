@@ -212,7 +212,7 @@ class RoundLayout : FrameLayout {
 
             // BottomRight
             drawPath(Path().apply {
-                if (mBottomLeftRadius == 0f) {
+                if (mBottomRightRadius == 0f) {
                     lineTo(width.toFloat(), height.toFloat())
                 } else
                     addArc(bottomRightOuterRect, 0f, 90f)
