@@ -35,8 +35,7 @@ class RoundLayout : FrameLayout {
             field = value
         }
 
-    var isInnerRadius = false
-
+//    var isInnerRadius = false
 
     constructor(context: Context?) : super(context!!)
     constructor(context: Context?, attrs: AttributeSet?) : super(context!!, attrs) {
@@ -73,6 +72,14 @@ class RoundLayout : FrameLayout {
         strokeWidth = typedArray.getDimension(R.styleable.RoundLayout_strokeWidth, 0f)
         strokeColor = typedArray.getColor(R.styleable.RoundLayout_strokeColor, Color.TRANSPARENT)
         typedArray.recycle()
+    }
+
+    fun setRadius(topLeftRadius: Float, topRightRadius: Float, bottomRightRadius: Float, bottomLeftRadius: Float) {
+        mTopLeftRadius = topLeftRadius
+        mTopRightRadius = topRightRadius
+        mBottomRightRadius = bottomRightRadius
+        mBottomLeftRadius = bottomLeftRadius
+        invalidate()
     }
 
     override fun dispatchDraw(canvas: Canvas?) {
